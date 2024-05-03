@@ -1,10 +1,10 @@
-# Code in Place Spring 2023 - Stanford University
+# Code in Place Spring 2024 - Stanford University
 
-Extra suplemental materials dedicated to Code in Place Spring 2023 with Stanford University
+Extra suplemental materials dedicated to Code in Place Spring 2024 with Stanford University
 
 Topics to be covered:
 
-## Input Arguments (Week 2: May 05, 2023) ##
+## Input Arguments (Week 2: May 03, 2024) ##
 <details>
 <summary> User Input Prompt: remember all data types are still in string </summary>
 
@@ -15,7 +15,7 @@ def main():
 ```
 </details>  
 
-## Console Programming (Week 3: May 12, 2023) ##
+## Console Programming (Week 3: May 10, 2024) ##
 
 ### Conditional Branching ###
 <details>
@@ -23,67 +23,123 @@ def main():
 
 ```python
 def main():
+  MERCURY_GRAVITY = (37.6 / 100)
+  VENUS_GRAVITY = (88.9 / 100)
+  MARS_GRAVITY = (37.8 / 100)
+  JUPITER_GRAVITY = (236 / 100)
+  SATURN_GRAVITY = (108.1 / 100)
+  URANUS_GRAVITY = (81.5 / 100)
+  NEPTUNE_GRAVITY = (114 / 100)    
+
   earthWeight = float(input("Enter the object weight: "))
   planetName = input("Enter a planet name: ")
   
   if (planetName == "Mercury"):
-    planetWeight = float(earthWeight) * (37.6 / 100)
+    planetWeight = float(earthWeight) * MERCURY_GRAVITY
         
   elif (planetName == "Venus"):
-    planetWeight = float(earthWeight) * (88.9 / 100)
+    planetWeight = float(earthWeight) * VENUS_GRAVITY
         
   elif (planetName == "Mars"):
-    planetWeight = float(earthWeight) * (37.8 / 100)    
+    planetWeight = float(earthWeight) * MARS_GRAVITY
 
   elif (planetName == "Jupiter"):
-    planetWeight = float(earthWeight) * (236 / 100)
+    planetWeight = float(earthWeight) * JUPITER_GRAVITY
         
   elif (planetName == "Saturn"):
-    planetWeight = float(earthWeight) * (108.1 / 100)
+    planetWeight = float(earthWeight) * SATURN_GRAVITY
 
   elif (planetName == "Uranus"):
-    planetWeight = float(earthWeight) * (81.5 / 100)
+    planetWeight = float(earthWeight) * URANUS_GRAVITY
         
   elif (planetName == "Neptune"):
-    planetWeight = float(earthWeight) * (114 / 100)    
+    planetWeight = float(earthWeight) * NEPTUNE_GRAVITY
     
   else:
-    planetWeight = 0
+    planetWeight = -1.0 # Why put a negative value here?
 ```
 </details>
 
 <details>
-<summary> 2. <b>MATCH-CASE</b> Statement (Require Python 3.10 or above) </summary>
+<summary> 2. <b>IF</b> Statement</summary>
 
 ```python
 def main():
+  MERCURY_GRAVITY = (37.6 / 100)
+  VENUS_GRAVITY = (88.9 / 100)
+  MARS_GRAVITY = (37.8 / 100)
+  JUPITER_GRAVITY = (236 / 100)
+  SATURN_GRAVITY = (108.1 / 100)
+  URANUS_GRAVITY = (81.5 / 100)
+  NEPTUNE_GRAVITY = (114 / 100)    
+
+  earthWeight = float(input("Enter the object weight: "))
+  planetName = input("Enter a planet name: ")
+  planetWeight = -1 # Why put a negative value here?
+
+  if (planetName == "Mercury"):
+    planetWeight = float(earthWeight) * MERCURY_GRAVITY
+        
+  if (planetName == "Venus"):
+    planetWeight = float(earthWeight) * VENUS_GRAVITY
+        
+  if (planetName == "Mars"):
+    planetWeight = float(earthWeight) * MARS_GRAVITY
+
+  if (planetName == "Jupiter"):
+    planetWeight = float(earthWeight) * JUPITER_GRAVITY
+        
+  if (planetName == "Saturn"):
+    planetWeight = float(earthWeight) * SATURN_GRAVITY
+
+  if (planetName == "Uranus"):
+    planetWeight = float(earthWeight) * URANUS_GRAVITY
+        
+  if (planetName == "Neptune"):
+    planetWeight = float(earthWeight) * NEPTUNE_GRAVITY
+```
+</details>
+
+<details>
+<summary> 3. <b>MATCH-CASE</b> Statement (Require Python 3.10 or above) </summary>
+
+```python
+def main():
+  MERCURY_GRAVITY = (37.6 / 100)
+  VENUS_GRAVITY = (88.9 / 100)
+  MARS_GRAVITY = (37.8 / 100)
+  JUPITER_GRAVITY = (236 / 100)
+  SATURN_GRAVITY = (108.1 / 100)
+  URANUS_GRAVITY = (81.5 / 100)
+  NEPTUNE_GRAVITY = (114 / 100)    
+
   earthWeight = float(input("Enter the object weight: "))
   planetName = input("Enter a planet name: ")
   
   match planetName:
     case "Mercury":
-      planetWeight = float(earthWeight) * (37.6 / 100)
+      planetWeight = float(earthWeight) * MERCURY_GRAVITY
   
     case "Venus":
-      planetWeight = float(earthWeight) * (88.9 / 100)
+      planetWeight = float(earthWeight) * VENUS_GRAVITY
   
     case "Mars":
-      planetWeight = float(earthWeight) * (37.8 / 100)
+      planetWeight = float(earthWeight) * MARS_GRAVITY
   
     case "Jupiter":
-      planetWeight = float(earthWeight) * (236 / 100)
+      planetWeight = float(earthWeight) * JUPITER_GRAVITY
       
     case "Saturn":
-      planetWeight = float(earthWeight) * (108.1 / 100)
+      planetWeight = float(earthWeight) * SATURN_GRAVITY
   
     case "Uranus":
-      planetWeight = float(earthWeight) * (81.5 / 100)
+      planetWeight = float(earthWeight) * URANUS_GRAVITY
   
     case "Neptune":
-      planetWeight = float(earthWeight) * (114 / 100)
+      planetWeight = float(earthWeight) * NEPTUNE_GRAVITY
   
     case other:
-      planetWeight = 0.0
+      planetWeight = -1.0 # Why put a negative value here?
 ```
 </details>
 
@@ -92,60 +148,39 @@ def main():
 - Notice that both "+" and "," can be used interchangably
 - Concatenate multiple strings with + (plus) or , (comma)
 - All concatenated items have to be converted to the same data type (string)
+<details>
+<summary> Examples </summary>
+  
 ```python
 planetName = "Mars"; planetWeight = 175.26
 print("The weight on " + planetName + ": " + str(marsWeight))
 print("The weight on " , planetName + ": " , str(marsWeight))
 ```
 
+</details>
+
 <b> 2. Reference </b>
 - Notice the ```.format(,)``` patten
 - Unlike concatenation method, this method requires no string conversion
 - Use the {} (curly brackets) to place your variable
+<details>
+<summary> Examples </summary>
+ 
 ```python
 planetName = "Mars"; planetWeight = 175.26
 print("The weight on {}: {}".format(planetName, planetWeight))
 ```
+</details>
+
 <b> 3. F-word </b>
 - Notice the f letter inside print()
 - Similar to method 2 (reference), but now variable name is placed inside the curly brackets 
 - Likewise, no variable casting (conversion) is needed
+<details>
+<summary> Examples </summary>
+  
 ```python
 planetName = "Mars"; planetWeight = 175.26
 print(f"The weight on {planetName}: {planetWeight}")
 ```
-
-## Graphics (Week 4: May 19, 2023) ##
-
-### Functions with Parameters ###
-<details>
-<summary> 1. <b>Single</b> Output Return </summary>
-
-```python
-def single_output_function(input_1, input_2, input_3):
-  output = input_1 * input_2 * input_3
-  return output
-```
 </details>
-
-<details>
-<summary> 2. <b>Multiple</b> Outputs Return </summary>
-
-```python
-def multi_output_function(input_1, input_2):
-  # Begin by declaring def, brackets, and colon sign (:)
-  output_1 = input_1 + input_2
-  output_2 = input_1 * input_2
-      
-  # The correct word is return, NOT result
-  return output_1, output_2
-```
-</details>
-
-## Animation (Week 5: May 26, 2023) ##
-
-  - Coming Soon
-
-## Data Structures: Containers (Week 6: June 02, 2023) ##
-
-  - Coming Soon
