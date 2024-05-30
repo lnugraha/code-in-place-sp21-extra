@@ -231,7 +231,51 @@ def main():
 ## Canvas, Graphics, and Animation (Week 5: May 24, 2024) ##
 
 ## Data Structures (Week 6: May 31, 2024) ##
+Visit: [2024_05_31_DataStructures](https://github.com/lnugraha/code-in-place-extra/tree/2024-edition/2024_05_31_DataStructures)
+
 <b> 1. Calculating Factorial </b>
+<details>
+<summary> Using Recursion </summary>
+  
+```python
+def factorial_recursion(n):
+  if (n==0 or n==1):
+    return 1
+
+  return n * factorial_recursion(n-1)
+```
+
+</details>
+
+<details>
+<summary> Using Iteration </summary>
+  
+```python
+def factorial_iteration(n):
+  result = 1;
+  for i in range(n, 1, -1):
+    result = i*result
+
+  return result
+```
+
+</details>
+
+<details>
+<summary> Using Dynamic Programming </summary>
+  
+```python
+def factorial_dynamic_programming(n):
+  factorial_list = [-1] * (n+1)
+  factorial_list[0] = 1
+
+  for i in range(1, n+1, 1):
+    factorial_list[i] = factorial_list[i-1] * i
+
+  return factorial_list[n]
+```
+
+</details>
 
 <b> 2. Revisiting Planetary Weight </b>
 
