@@ -227,3 +227,13 @@ def main():
   mercury_test, venus_test, mars_test = calculate_planet_weights(earth_test)
 ```
 </details>
+
+## Canvas, Graphics, and Animation (Week 5: May 24, 2024) ##
+
+## Data Structures (Week 6: May 31, 2024) ##
+<b> 1. Calculating Factorial </b>
+
+<b> 2. Revisiting Planetary Weight </b>
+
+<b> 3. Plotting Regression Line </b>
+
