@@ -25,6 +25,14 @@ def factorial_iteration(n):
 
     return result
 
+def factorial_recursion(n):
+    # TODO: Can you add input checkers here?
+    # TODO: Can you add a simple unit test here    
+    if (n==0 or n==1):
+        return 1
+
+    return n * factorial_recursion(n-1)
+
 def factorial_dynamic_programming(n):
     if type(n) is str:
         raise TypeError("Cannot have string factorial")
