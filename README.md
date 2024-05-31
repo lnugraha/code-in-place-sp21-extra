@@ -262,7 +262,7 @@ def factorial_iteration(n):
 </details>
 
 <details>
-<summary> Using Dynamic Programming </summary>
+<summary> Using Dynamic Programming (List) </summary>
   
 ```python
 def factorial_dynamic_programming(n):
@@ -278,11 +278,12 @@ def factorial_dynamic_programming(n):
 </details>
 
 <b> 2. Revisiting Planetary Weight </b>
-- Need to know what JSON file format is
-- List of dictionary
+- Becoming familiar with JSON file format
+- Storing, hashing, and accessing dictionary value elements using its key
+- List of dictionary vs Dictionary
 
 <details>
-<summary> Using Conditionals (planet_conditional.py) </summary>
+<summary> Using <b>Conditionals</b> (planet_conditional.py) </summary>
 
 ```python
 MERCURY_GRAVITY = (37.6 / 100)
@@ -332,15 +333,13 @@ def main():
   
   print("The name of the planet: " + planetName + " with weight: " + str(planetWeight))
 
-if __name__ == '__main__':
-    main()
 ```
 
 </details>
 
 <details>
   
-<summary> Using Dictionary (planet_dictionary.py and mars.py) </summary>
+<summary> Using <b>List of Dictionary</b> (planet_dictionary.py) </summary>
   
 ```python
 planet_dict = [
@@ -364,8 +363,7 @@ def calculate_weight(target_planet, earth_weight):
         for name, gravity in planet_dict[i].items():
             if (planet_name == name):
                 planet_constant = gravity
-            else:
-                return -1.0
+
     planet_weight = planet_constant * earth_weight
 
     return planet_weight
@@ -378,8 +376,45 @@ def main():
 
   print("The name of the planet: " + planet_name + " with weight: " + str(planet_weight))
 
-if __name__ == '__main__':
-    main()
+```
+
+</details>
+
+<details>
+  
+<summary> Using <b>Dictionary</b> (planet_dictionary.py) </summary>
+  
+```python
+planet_dict = {
+  "mercury": 0.376, 
+  "venus": 0.889,
+  "earth": 1.0,  
+  "mars": 0.378,
+  "jupiter": 2.36, 
+  "saturn": 1.081, 
+  "uranus": 0.815, 
+  "neptune": 1.14
+  }
+
+def calculate_weight_alternative(target_planet, earth_weight):
+    planet_name = target_planet.lower()
+    planet_constant = -1.0
+
+    if planet_dict[ planet_name ] is not None:
+        planet_constant = planet_dict[planet_name]
+    
+    planet_weight = planet_constant * earth_weight
+
+    return planet_weight
+
+def main():
+  earth_weight = float(input("Enter the object weight: "))
+  planet_name = input("Enter a planet name: ")
+  
+  planet_weight = calculate_weight_alternative(planet_name, earth_weight)
+
+  print("The name of the planet: " + planet_name + " with weight: " + str(planet_weight))
+
 ```
 
 </details>
